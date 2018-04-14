@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				margin: 0;
+			}
+			
+			.clearfix:after {
+				content: "";
+				display: block;
+				clear: both;
+				height: 0;
+				overflow: hidden;
+				visibility: hidden;
+			}
+			
+			.clearfix {
+				zoom: 1;
+			}
+			
+			.wrap {
+				width: 900px;
+				margin: 0 auto;
+			}
+			
+			#left {
+				width: 200px;
+				height: 500px;
+				background: #ccffff;
+				float: left;
+			}
+			
+			#right {
+				width: 700px;
+				height: 500px;
+				background: pink;
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap clearfix">
+			<aside id="left"></aside>
+			<section id="right"></section>
+		</div>
+	</body>
+
+</html>
