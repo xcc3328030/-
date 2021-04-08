@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 方法1 
+         .box {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background: red;
+        }
+
+        .inner {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #ffffff;
+        } */
+
+
+        /* 方法2
+         .box {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background: red;
+        }
+
+        .inner {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: #ffffff;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        } */
+
+        /* 方法3 */
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: red;
+            width: 100px;
+            height: 100px;
+        }
+
+        .inner {
+            width: 50px;
+            height: 50px;
+            background: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        不定宽高的div水平、垂直居中问题
+    </h1>
+    <div class="box">
+        <div class="inner"></div>
+    </div>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <script>
+        // 闭包的理解
+        // js执行函数，函数就要被销毁。闭包就是函数的子函数，子函数访问函数内的变量，不会被销毁
+        // 闭包消耗内存
+        let body = document.getElementsByTagName('li')
+        for (var i = 0; i < body.length; i++) {
+            (function (i) {
+                body[i].onclick = function () {
+                    alert(i)
+                }
+            })(i)
+        }
+    </script>
+</body>
+
+</html>
